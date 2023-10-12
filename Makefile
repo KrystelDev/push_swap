@@ -6,7 +6,7 @@
 #    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/10/12 19:44:13 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/12 21:58:32 by kryrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,30 +17,36 @@ FLAGS = -Wall -Wextra -Werror
 NAME	= push_swap
 
 # Archivos que uso al compilar
-FUNCTION	=  main.c
+FUNCTION	=  main.c ft_all_isdigit.c
 				
 P_PF		= ft_printf
 P_L			= libft
 
+LIB_A		= libft.a
+PF_A		= libftprintf.a
 # Tenemos que transformar los .c en .o para poder compilar
 OBJS	= $(FUNCTION:.c=.o)
 
 # La libreria
 HEADER	= push_swap.h
-
+CP		= cp
 # Se compila el archivo binario (ejecutable).
 all:  lib printf ${NAME}
 
+# esto es para que vaya al make de la carpeta printf y haga el all
 printf:
 	@${MAKE} -C ${P_PF} all
+	${CP} ${P_PF}/${PF_A} .
 
+# esto es para que vaya al make de la carpeta libft y haga el all
 lib:
 	@${MAKE} -C ${P_L} all
+	${CP} ${P_L}/${LIB_A} .
 
 # Se compila los objetos con las librerias y archivos.
-${NAME}: ${OBJS} #${HEADER}
+${NAME}: ${OBJS} ${HEADER}
 	@echo "ejecutando ${NAME}"
-	$(CC) $(FLAGS) ${OBJS} -o ${NAME}
+	$(CC) --debug $(FLAGS) ${OBJS} -o ${NAME} $(LIB_A) $(PF_A)
 
 # Si no tuvieramos main.c usariamos el ar rcs en su lugar.
 # ${NAME}: ${OBJS} ${HEADER}
@@ -48,7 +54,7 @@ ${NAME}: ${OBJS} #${HEADER}
 # 	ar rcs $(NAME) ${OBJS}
 
 # Mirar google TODO
-%.o: %.c Makefile #${HEADER}
+%.o: %.c Makefile ${HEADER}
 	@echo "Compilando el objeto $@..."
 	$(CC) -c $(FLAGS) $< -o $@
 #	gcc -c -Wall -Wextra -Werror ...
@@ -65,7 +71,7 @@ clean:
 
 fclean: clean
 	@echo "Ejecutando fclean..."
-	rm -f $(NAME)
+	rm -f $(NAME) $(LIB_A) $(PF_A)
 	@${MAKE} -C ${P_PF} fclean
 	@${MAKE} -C ${P_L} fclean
 
