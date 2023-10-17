@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_all_isdigit.c                                   :+:      :+:    :+:   */
+/*   ft_r.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 20:30:20 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/13 22:42:16 by krodcas          ###   ########.fr       */
+/*   Created: 2023/10/13 20:33:20 by krodcas           #+#    #+#             */
+/*   Updated: 2023/10/17 12:40:03 by krodcas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
+#include "ft_printf/ft_printf.h"
 
-int ft_all_isdigit(int argc, char **argv)
+void ft_r(int argc, int *stack, char c)
 {
-	size_t i;
-	size_t j;
+    size_t size;
+    int temp;
+    size_t i;
 
-	i = 1;
-	while ((int)i < argc)
-	{
-		j = 0;
-		while (ft_strlen(argv[i]) > j)
-		{
-			if (j == 0 && argv[i][j] == '-')
-				j++;
+    size = argc - 1;
+    temp = stack[0];
+    i = 0;
+    while (i < size - 1)
+    {
+        stack[i] = stack[i + 1];
+        i++;
+    }
+    stack[size - 1] = temp;
 
-			if (!ft_isdigit((int)argv[i][j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
+    ft_printf("r%c\n", c);
 }

@@ -3,21 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
+#    By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/06/05 11:34:18 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/13 18:03:16 by krodcas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = gcc -g
 FLAGS = -Wall -Wextra -Werror
 
 # Nombre del proyecto
 NAME	= libftprintf.a
 
 # Archivos que uso al compilar
-FUNCTION	=  ft_printf.c ft_itoa.c ft_strlen.c ft_calloc.c ft_put.c
+FUNCTION	=  ft_printf.c ft_itoap.c ft_strlenp.c ft_callocp.c ft_put.c
 				
 
 # Tenemos que transformar los .c en .o para poder compilar

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_callocp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-void	*ft_calloc(size_t num_elements, size_t element_size)
+void *ft_callocp(size_t num_elements, size_t element_size)
 {
-	char	*copia_cpy;
-	size_t	i;
+	char *copia_cpy;
+	size_t i;
 
 	copia_cpy = malloc(num_elements * element_size);
 	if (!copia_cpy)

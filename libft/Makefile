@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
+#    By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/05/30 18:14:01 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/13 16:08:27 by krodcas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = gcc -g
 FLAGS = -Wall -Wextra -Werror
 
 # Nombre del proyecto
@@ -23,7 +23,8 @@ FUNCTION	=  ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c  ft_isprint.c \
 				ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
 				ft_strnstr.c ft_strdup.c ft_calloc.c ft_atoi.c ft_substr.c ft_strjoin.c \
 				ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c\
-				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
+				ft_atol.c
 				
 
 # Tenemos que transformar los .c en .o para poder compilar

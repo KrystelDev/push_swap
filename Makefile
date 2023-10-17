@@ -3,21 +3,23 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
+#    By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/10/12 21:58:32 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/17 12:36:44 by krodcas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = gcc -g
 FLAGS = -Wall -Wextra -Werror
 
 # Nombre del proyecto
 NAME	= push_swap
 
 # Archivos que uso al compilar
-FUNCTION	=  main.c ft_all_isdigit.c
+FUNCTION	=  main.c ft_all_isdigit.c ft_iscpy.c ft_all_isint.c\
+				ft_conversorint.c ft_printints.c ft_s.c ft_r.c ft_rr.c\
+				
 				
 P_PF		= ft_printf
 P_L			= libft
@@ -46,7 +48,7 @@ lib:
 # Se compila los objetos con las librerias y archivos.
 ${NAME}: ${OBJS} ${HEADER}
 	@echo "ejecutando ${NAME}"
-	$(CC) --debug $(FLAGS) ${OBJS} -o ${NAME} $(LIB_A) $(PF_A)
+	$(CC) $(FLAGS) ${OBJS} -o ${NAME} $(LIB_A) $(PF_A)
 
 # Si no tuvieramos main.c usariamos el ar rcs en su lugar.
 # ${NAME}: ${OBJS} ${HEADER}

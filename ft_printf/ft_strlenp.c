@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlenp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-size_t	ft_strlen(const char *s)
+size_t ft_strlenp(const char *s)
 {
-	size_t	count;
+	size_t count;
 
 	count = 0;
 	while (s[count] != '\0')
@@ -28,7 +28,7 @@ size_t	ft_strlen(const char *s)
 //     const char *str;
 //     str = "o \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0";
 // 	printf("str: %s\n", str);
-// 	printf("ft_strlen(str): %zu\n", ft_strlen(str));
+// 	printf("ft_strlenp(str): %zu\n", ft_strlenp(str));
 // 	printf("strlen(str): %zu\n", strlen(str));
 // 	printf("str: %s\n", str);
 // }

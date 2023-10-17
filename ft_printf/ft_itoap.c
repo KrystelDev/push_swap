@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:39:16 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/06/05 12:41:04 by kryrodri         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:00:19 by krodcas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static long	ft_nbrlen(long n)
+static long ft_nbrlen(long n)
 {
-	int	len;
+	int len;
 
 	len = 1;
 	if (n < 0)
@@ -30,12 +30,12 @@ static long	ft_nbrlen(long n)
 	return (len);
 }
 
-char	*ft_itoa(long n)
+char *ft_itoap(long n)
 {
-	char	*itoa;
-	int		i;
+	char *itoa;
+	int i;
 
-	itoa = ft_calloc(ft_nbrlen(n) + 1, sizeof(char));
+	itoa = ft_callocp(ft_nbrlen(n) + 1, sizeof(char));
 	if (!itoa)
 		return (NULL);
 	i = ft_nbrlen(n) - 1;
@@ -55,16 +55,16 @@ char	*ft_itoa(long n)
 // 42 Control exepción "-2147483648"
 // 43 Al saber el tamanno de digitos, puedo pedir memoria
 // 54 A partir de aquí encontrar los numeros.
-// 54 Como encuentro primero la unidades, 
+// 54 Como encuentro primero la unidades,
 // despues las decentas etc.. necesito ir de atrás adelante.
 // #include <stdio.h>
 // int main (void)
 // {
-// 	char *result = ft_itoa(-2147483648);
+// 	char *result = ft_itoap(-2147483648);
 //  	printf("%s\n", result);
-// 	result = ft_itoa(2147483647);
+// 	result = ft_itoap(2147483647);
 //  	printf("%s\n", result);
-// 	result = ft_itoa(0);
+// 	result = ft_itoap(0);
 //  	printf("%s\n", result);
 // 	free(result);
 // 	return (0);

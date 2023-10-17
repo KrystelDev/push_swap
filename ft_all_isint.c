@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_all_isdigit.c                                   :+:      :+:    :+:   */
+/*   ft_all_isint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 20:30:20 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/13 22:42:16 by krodcas          ###   ########.fr       */
+/*   Created: 2023/10/13 12:36:06 by krodcas           #+#    #+#             */
+/*   Updated: 2023/10/13 13:50:59 by krodcas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-int ft_all_isdigit(int argc, char **argv)
+int ft_all_isint(int argc, char **argv)
 {
-	size_t i;
-	size_t j;
+	long int max_int;
+	long int min_int;
+	int i;
+	long int num;
 
+	max_int = INT_MAX;
+	min_int = INT_MIN;
 	i = 1;
-	while ((int)i < argc)
+	while (i < argc)
 	{
-		j = 0;
-		while (ft_strlen(argv[i]) > j)
-		{
-			if (j == 0 && argv[i][j] == '-')
-				j++;
-
-			if (!ft_isdigit((int)argv[i][j]))
-				return (0);
-			j++;
-		}
+		num = ft_atol(argv[i]);
+		if (num > max_int || num < min_int)
+			return 1; // Sí hay un número mayor o menor a un int
 		i++;
 	}
-	return (1);
+	return 0; // No hay un número mayor o menor a un int
 }
