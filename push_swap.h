@@ -12,6 +12,7 @@ void ft_printints(int argc, int *stack);
 void ft_rr(int *stack);
 void ft_r(int argc, int *stack, char c);
 void ft_s(int *stack, char c);
+void ft_p(int *stack_a, int *stack_b, int argc, char c);
 int main(int argc, char **argv);
 
 #endif
