@@ -6,7 +6,7 @@
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 20:26:27 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/17 19:31:53 by kryrodri         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:31:48 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,25 @@ int ft_isnotsorted(int argc, int *stack_a)
 	}
 	return (0);
 }
+void ft_printints(int argc, int *stack)
+{
+    int i;
+
+    i = 0;
+    while (i < (argc - 1))
+    {
+        ft_printf("%d\n", stack[i]);
+        i++;
+    }
+}
+
 
 int main(int argc, char **argv)
 {
 	int *stack_a;
-	int *stack_b;
+	int *stack_b = NULL;
+	int middle;
+	int i;
 
 	if (argc <= 1)
 		return (0);
@@ -81,6 +95,7 @@ int main(int argc, char **argv)
 				ft_r(argc, stack_a, 'a');
 			}
 		}
+
 	}
 
 
@@ -108,30 +123,56 @@ int main(int argc, char **argv)
 	// 4 3 1 2
 	// 4 3 2 1
 	// }
-
-	if (argc == 5)
+	ft_printf("argc: %i\n", argc);
+	if (argc > 4)
 	{
 		stack_b = ft_calloc(argc, sizeof(int));
 		if (!stack_b)
 			return (0);
-		
-		if (ft_isnotsorted(argc, stack_a))
-		{
-			ft_p(stack_a, stack_b, argc, 'b');
-			ft_p(stack_a, stack_b, argc, 'b');
+		middle = ft_middle(stack_a, argc);
+		// while (ft_isnotsorted(argc, stack_a))
+		// {
+			i = 0;
+			while ( i  < (argc - 1))
+			{
+				ft_printf("stack_a[0]: %i > %i\n", stack_a[0], middle);
+				if (stack_a[0] < middle)
+				{
+					ft_p(stack_a, stack_b, argc, 'b');
+					ft_printf("-------PA---------\n");
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[0]);
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[1]);
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[2]);
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[3]);
+					ft_printf("----------------\n");
+					--argc;
+				}
+				else
+				{
+					ft_r(argc, stack_a, 'a');
+					ft_printf("-------RA---------\n");
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[0]);
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[1]);
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[2]);
+					ft_printf("Final -> stack_a[0 - 1]: %i\n", stack_a[3]);
+					ft_printf("----------------\n");
+					i++;
+				}
+				
+			}
+	}
+	ft_printf("stack_a\n");
+	ft_printints(argc, stack_a);
+	ft_printf("--------------\n");
+	free(stack_a);
 
-			// if (ft_isnotsorted(argc, stack_a))
-			// 	ft_s(stack_a, 'a');
-			// if (!ft_isnotsorted(argc, stack_b))
-			// 	ft_s(stack_b, 'b');
-			// ft_p(stack_b, stack_a, argc, 'a');
-			// ft_p(stack_b, stack_a, argc, 'a');
-		}
+	if (stack_b)
+	{
+		ft_printf("stack_b\n");
+		ft_printints(argc, stack_b);
+		ft_printf("--------------\n");
 		free(stack_b);
 	}
-
-	ft_printints(argc, stack_a);
-	free(stack_a);
 	
 	return (0);
 }

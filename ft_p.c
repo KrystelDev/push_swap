@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:37:28 by krodcas           #+#    #+#             */
-/*   Updated: 2023/10/17 14:16:48 by krodcas          ###   ########.fr       */
+/*   Updated: 2023/10/18 19:20:39 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void ft_p(int *stack_a, int *stack_b, int argc, char c)
     int value_to_push = stack_a[0];
 
     // Desplazar los elementos de stack_b del del penultimo al ultimo, ... , del 0 al 1...
+    // argc -1 pel nom del arxiu
+    // argc -1 pk mirem posició no quasntaitat
+    // argc -1 pk no entri a una posci'o inexisten, ja que faig de i + 1..
     int i = argc - 3;
     while (i >= 0)
     {
@@ -35,9 +38,9 @@ void ft_p(int *stack_a, int *stack_b, int argc, char c)
     while (i <= argc - 2)
     {
         stack_a[i - 1] = stack_a[i];
-        stack_a[i] = '\0';
         i++;
     }
+    stack_a[i-1] = '\0';
     ft_printf("p%c\n", c);
 }
 

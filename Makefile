@@ -6,7 +6,7 @@
 #    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/10/17 18:57:49 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/18 13:31:08 by kryrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ NAME	= push_swap
 
 # Archivos que uso al compilar
 FUNCTION	=  main.c ft_all_isdigit.c ft_iscpy.c ft_all_isint.c\
-				ft_conversorint.c ft_printints.c ft_s.c ft_r.c ft_rr.c\
-				ft_p.c
+				ft_conversorint.c ft_s.c ft_r.c ft_rr.c\
+				ft_p.c ft_middle.c
 				
 				
 P_PF		= ft_printf
