@@ -6,7 +6,7 @@
 #    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/10/18 13:31:08 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/20 14:16:20 by kryrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ NAME	= push_swap
 
 # Archivos que uso al compilar
 FUNCTION	=  main.c ft_all_isdigit.c ft_iscpy.c ft_all_isint.c\
-				ft_conversorint.c ft_s.c ft_r.c ft_rr.c\
-				ft_p.c ft_middle.c
+				ft_isnotsorted.c ft_conversorint.c ft_s.c ft_r.c ft_rr.c\
+				ft_p.c ft_middle.c ft_sorted_argc4.c ft_sorted_argc5.c\
+				ft_sorted_argc6.c\
 				
 				
 P_PF		= ft_printf
@@ -36,17 +37,17 @@ CP		= cp
 # Se compila el archivo binario (ejecutable).
 all:  lib printf ${NAME}
 
-# esto es para que vaya al make de la carpeta printf y haga el all
-printf:
-	@${MAKE} -C ${P_PF} all
-	${CP} ${P_PF}/${PF_A} .
-
 # esto es para que vaya al make de la carpeta libft y haga el all
 lib:
-	@${MAKE} -C ${P_L} all
+	${MAKE} -C ${P_L} all
 	${CP} ${P_L}/${LIB_A} .
 
-# Se compila los objetos con las librerias y archivos.
+# esto es para que vaya al make de la carpeta printf y haga el all
+printf:
+	${MAKE} -C ${P_PF} all
+	${CP} ${P_PF}/${PF_A} .
+
+# Se compila los objetos on las librerias y archivos.
 ${NAME}: ${OBJS} ${HEADER}
 	@echo "ejecutando ${NAME}"
 	$(CC) $(FLAGS) ${OBJS} -o ${NAME} $(LIB_A) $(PF_A)

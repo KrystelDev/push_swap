@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+         #
+#    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/10/13 18:03:16 by krodcas          ###   ########.fr        #
+#    Updated: 2023/10/20 12:04:32 by kryrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ ${NAME}: ${OBJS} ${HEADER}
 # Mirar google TODO
 %.o: %.c ${HEADER} Makefile 
 	@echo "Compilando el objeto $@..."
-	@$(CC) -c $(FLAGS) $< -o $@
+	$(CC) -c $(FLAGS) $< -o $@
 #	gcc -c -Wall -Wextra -Werror ...
 # $@  = (todos los .o)
 # $< = (Todos los inputs, seria todos los .c y su header (.h))
@@ -51,11 +51,11 @@ ${NAME}: ${OBJS} ${HEADER}
 # -f es para decir que si no existen ignoralos (evitando avisos como de errores innecesarios.)
 clean:
 	@echo "Ejecutando clean..."
-	@rm -f $(OBJS) 
+	rm -f $(OBJS) 
 
 fclean: clean
 	@echo "Ejecutando fclean..."
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 	@echo "Ejecutando re..."
