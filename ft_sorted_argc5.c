@@ -6,7 +6,7 @@
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:31:50 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/20 14:16:16 by kryrodri         ###   ########.fr       */
+/*   Updated: 2023/10/20 20:33:10 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int    ft_sorted_argc5(int argc, int *stack_a)
     // ft_printints(argc, stack_b);
     // ft_printf("--------------\n");
     i = 0;
-    while ( i  < (argc - 1) && ft_isnotsorted(argc, stack_a))
+    while (ft_isnotsorted(argc, stack_a) || argc!=5)
     {
         if (stack_a[0] < middle)
         {
