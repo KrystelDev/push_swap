@@ -13,6 +13,7 @@ void	ft_rr(int *stack);
 void	ft_r(int argc, int *stack, char c);
 void	ft_s(int *stack, char c);
 void	ft_p(int *stack_a, int *stack_b, int argc, char c);
+int		*ft_sorted(int *list_num, int argc);
 int		ft_middle(int *list_num, int argc);
 void	ft_sorted_argc4(int argc, int *stack_a);
 int		ft_sorted_argc5(int argc, int *stack_a);

@@ -6,7 +6,7 @@
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:31:50 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/20 20:33:10 by kryrodri         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:37:27 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int    ft_sorted_argc5(int argc, int *stack_a)
 {
     int *stack_b;
     int middle;
-    int i;
 
     stack_b = ft_calloc(argc, sizeof(int));
     if (!stack_b)
@@ -31,7 +30,6 @@ int    ft_sorted_argc5(int argc, int *stack_a)
     // ft_printf("stack_b\n");
     // ft_printints(argc, stack_b);
     // ft_printf("--------------\n");
-    i = 0;
     while (ft_isnotsorted(argc, stack_a) || argc!=5)
     {
         if (stack_a[0] < middle)
@@ -40,10 +38,7 @@ int    ft_sorted_argc5(int argc, int *stack_a)
             --argc;
         }
         else
-        {
             ft_r(argc, stack_a, 'a');
-            i++;
-        }
         if (argc == 4)
         {
             while (ft_isnotsorted(argc, stack_a))

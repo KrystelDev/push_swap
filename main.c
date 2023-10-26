@@ -6,7 +6,7 @@
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 20:26:27 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/20 18:04:07 by kryrodri         ###   ########.fr       */
+/*   Updated: 2023/10/23 17:17:28 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ int main(int argc, char **argv)
 		if (!ft_sorted_argc6(argc, stack_a))
 			return(0);
 	}
+	// if (argc > 6 && ft_isnotsorted(argc, stack_a))
+	// {
+	// 	if (!ft_sorted_argc7(argc, stack_a))
+	// 		return(0);
+	// }
 	// if (argc > 4)
 	// {
 	// 	stack_b = ft_calloc(argc, sizeof(int));
