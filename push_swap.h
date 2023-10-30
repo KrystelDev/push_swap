@@ -6,7 +6,7 @@
 /*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:07:30 by kryrodri          #+#    #+#             */
-/*   Updated: 2023/10/26 21:09:32 by kryrodri         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:27:56 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_iscpy(int argc, char **argv);
 int		ft_all_isint(int argc, char **argv);
 int		ft_isnotsorted(int argc, int *stack_a);
 int		*ft_conversorint(int argc, char **argv);
-void	ft_rr(int *stack);
+void	ft_rr(int argc, int *stack, char c);
 void	ft_r(int argc, int *stack, char c);
 void	ft_s(int *stack, char c);
 void	ft_p(int *stack_a, int *stack_b, int argc, char c);

@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: krodcas <krodcas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 23:43:55 by krodcas           #+#    #+#             */
-/*   Updated: 2023/10/13 23:55:18 by krodcas          ###   ########.fr       */
+/*   Updated: 2023/10/30 11:46:11 by kryrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf/ft_printf.h"
 
-void ft_rr(int *stack)
+void ft_rr(int argc, int *stack, char c)
 {
     size_t size;
     int temp;
     size_t i;
 
-    size = 0;
-    while (stack[size])
-        size++;
-
+    size = argc - 1;
     temp = stack[size - 1];
     i = size - 1;
     while (i > 0)
@@ -32,5 +29,5 @@ void ft_rr(int *stack)
     }
     stack[0] = temp;
 
-    ft_printf("rra\n");
+    ft_printf("rr%c\n", c);
 }

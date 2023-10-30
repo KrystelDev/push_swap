@@ -6,7 +6,7 @@
 #    By: kryrodri <kryrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/26 11:09:46 by kryrodri          #+#    #+#              #
-#    Updated: 2023/10/26 11:40:33 by kryrodri         ###   ########.fr        #
+#    Updated: 2023/10/30 20:56:00 by kryrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ FUNCTION	=  main.c ft_all_isdigit.c ft_iscpy.c ft_all_isint.c\
 P_PF		= ft_printf
 P_L			= libft
 
-LIB_A		= libft.a
-PF_A		= libftprintf.a
+LIB_A		= ./libft/libft.a
+PF_A		= ./ft_printf/libftprintf.a
 # Tenemos que transformar los .c en .o para poder compilar
 OBJS	= $(FUNCTION:.c=.o)
 
@@ -40,12 +40,12 @@ all:  lib printf ${NAME}
 # esto es para que vaya al make de la carpeta libft y haga el all
 lib:
 	${MAKE} -C ${P_L} all
-	${CP} ${P_L}/${LIB_A} .
+# ${CP} ${P_L}/${LIB_A} .
 
 # esto es para que vaya al make de la carpeta printf y haga el all
 printf:
 	${MAKE} -C ${P_PF} all
-	${CP} ${P_PF}/${PF_A} .
+# ${CP} ${P_PF}/${PF_A} .
 
 # Se compila los objetos on las librerias y archivos.
 ${NAME}: ${OBJS} ${HEADER}
